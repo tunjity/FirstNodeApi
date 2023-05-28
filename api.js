@@ -33,6 +33,7 @@ router.route('/genders/:id').get((request, response) => {
 
 router.route('/genders').post((request, response) => {
     let order = { ...request.body }
+    console.log(order);
     genderDb.addOrder(order).then(data => {
         response.status(201).json(data);
     })

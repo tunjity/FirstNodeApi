@@ -31,7 +31,8 @@ async  function  getOrders() {
       let  insertProduct = await  pool.request()
       .input('GenderId', sql.Int, order.GenderId)
       .input('GenderName', sql.NVarChar, order.GenderName)
-      .execute('InsertOrders');
+      .query("insert into Gender(GenderID,GenderName) values (@GenderId,@GenderName)");
+     console.log(sql.query); 
       return  insertProduct.recordsets;
     }
     catch (err) {
