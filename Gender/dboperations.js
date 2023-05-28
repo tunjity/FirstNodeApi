@@ -1,4 +1,4 @@
-var  config = require('./dbconfig');
+var  config = require('../dbconfig');
 const  sql = require('mssql');
 
 async  function  getOrders() {
@@ -31,9 +31,6 @@ async  function  getOrders() {
       let  insertProduct = await  pool.request()
       .input('GenderId', sql.Int, order.GenderId)
       .input('GenderName', sql.NVarChar, order.GenderName)
-    //   .input('Quantity', sql.Int, order.Quantity)
-    //   .input('Message', sql.NVarChar, order.Message)
-    //   .input('City', sql.NVarChar, order.City)
       .execute('InsertOrders');
       return  insertProduct.recordsets;
     }

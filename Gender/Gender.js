@@ -1,8 +1,7 @@
-class  Order{
+class  Gender{
     constructor(GenderId,GenderName){
       this.GenderId = GenderId;
       this.GenderName = GenderName;
     }
   }
-
-  module.exports = Order;
+  module.exports = Gender;
