@@ -64,7 +64,7 @@ router.route('/addresstypes/:id').get((request, response) => {
 router.route('/addresstypes').post((request, response) => {
     let order = { ...request.body }
     addressTypesDb.add(order).then(data => {
-        response.status(201).json(data);
+        response.status(200).json(data);
     })
 })
 //#endregion
